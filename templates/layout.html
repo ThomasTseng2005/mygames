@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Guessing Game</title>
+    <link href="{{ url_for('static', filename="style.css") }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Cuprum" />
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+</head>
+{% if header %}
+<header>
+    <h2 class="h2">Thomas's Site</h2>
+    <hr align="left" width="60%">
+    <a class= "home" href="/home">Home</a>
+    <h4 class="dotone">&middot;</h4>
+    <a class= "profile" href="/profile">Profile</a>
+    <h4 class="dottwo">&middot;</h4>
+    <a class= "logout" href="/logout">Logout</a>
+</header>
+{% endif %}
+<body>
+{% block content %}
+{% endblock %}
+</body>
+</html>

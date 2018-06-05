@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+</head>
+<body>
+<h1>Signup</h1>
+<form method ="POST">
+    <input type="text" name="usersignup" placeholder="Username:">
+    <br>
+    <input type="password" name="passwordsignup" placeholder="Password:">
+    <br>
+    <input type="password" name="retype_password" placeholder="Retype Password:">
+    <br>
+    <button type="submit">Signup</button>
+
+</form>
+{% if error_message %}
+{{ error_message }}
+{% endif %}
+<br>
+Already have an account? <a href="/login">Login</a>
+</body>
+</html>

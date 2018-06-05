@@ -1,0 +1,190 @@
+h1{
+    position: relative;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.89);
+    top: 40px;
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+}
+
+
+h2{
+    font-family: 'Quicksand', sans-serif;;
+    position: relative;
+    left: 250px;
+    top: 25px;
+    color: #000000;
+}
+
+h3{
+    position: relative;
+    font-size: 30px;
+    left: 42%;
+    top: 150px;
+
+}
+
+.nggh3{
+    position: relative;
+    font-size:20px;
+    left: 15%;
+    top: 200px;
+    font-weight: lighter;
+}
+
+.the_guess{
+    position: relative;
+    font-size: 17px;
+    left: 15%;
+    top: 280px;
+    width: 425px;
+    font-family: Times;
+}
+
+.nggbutton{
+    position: relative;
+    font-size: 17px;
+    right: 218px;
+    top: 430px;
+    width: 120px;
+    height: 30px;
+}
+
+.message{
+    position: relative;
+    font-size:20px;
+    left: 15%;
+    top: 270px;
+    font-weight: lighter;
+    color: crimson;
+}
+
+.guesses{
+    position: relative;
+    font-size:20px;
+    left: 52%;
+    top: 68px;
+    font-family: Georgia;
+    font-weight: lighter;
+}
+
+hr{
+    position: relative;
+    font-size: 30px;
+    left: 250px;
+    top: 30px;
+}
+
+.logout{
+    position: absolute;
+    left: 398px;
+    top: 85px;
+    font-size: 18px;
+    color: rgb(76, 76, 76);
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: Cuprum, Arial;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.home{
+    position: absolute;
+    left: 233px;
+    top: 85px;
+    font-size: 18px;
+    color: rgb(76, 76, 76);
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: Cuprum, Arial;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.profile{
+    position: absolute;
+    left: 315px;
+    top: 85px;
+    font-size: 18px;
+    color: rgb(76, 76, 76);
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: Cuprum, Arial;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+body{
+    background-color: #F7F7F7;
+}
+
+header{
+  width: 100%;
+  height: 140px;
+  background-color: white;
+}
+
+.dotone{
+    position: absolute;
+    left: 310px;
+    top: 85px;
+    font-size: 30px;
+}
+
+.dottwo{
+    position: absolute;
+    left: 392px;
+    top: 85px;
+    font-size: 30px;
+}
+
+.underline{
+  position: absolute;
+  top: 57.5%;
+  left: 32%;
+}
+
+.choices{
+  color: black;
+  position: absolute;
+  background-color: transparent;
+  top: 54%;
+  left: 32%;
+  width: 500px;
+  height: 40px;
+  font-size: 23px;
+  border: transparent;
+}
+
+.button{
+  position: absolute;
+  top: 67%;
+  left: 44%;
+  width: 150px;
+  height: 35px;
+  font-size: 20px;
+  background-color: #1220cb;
+  border: transparent;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav{
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    vertical-align:baseline;
+}

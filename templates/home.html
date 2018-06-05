@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Welcome Home {{ current_user.name }}!</h1>
+<h3>Choose a game:</h3>
+<form method="POST">
+<select name="option" class="choices">
+    <option>Number Guessing Game</option>
+    <option>Team Generator</option>
+</select>
+<hr class="underline" width="500px">
+<button type="Submit" class="button">Submit</button>
+</form>
+<br><br>
+{% endblock %}

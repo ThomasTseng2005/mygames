@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" type="text/css" href="login.css">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+</head>
+<body>
+<h1>Login</h1>
+<form method="POST">
+    <input type="text" name="username" placeholder="Email:">
+    <br>
+    <input type="password" name="password" placeholder="Password:">
+    <br>
+    <button type="submit">Submit</button>
+</form>
+{% if error_message %}
+{{ error_message }}
+{% endif %}
+<br>
+Dont have an account? <a href="/create">Create Now</a>
+</body>
+</html>

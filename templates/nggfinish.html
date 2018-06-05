@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>You won The Number Guessing Game!</title>
+</head>
+<body>
+<h1>You Won!</h1>
+<h3>You now have {{ current_user.score }} points!</h3>
+<p>You got it in: {{ count }} guesses</p>
+<p>The number is: {{ final_number }}</p>
+<br><br><br>
+Return <a href="/home">home</a>
+</body>
+</html>
