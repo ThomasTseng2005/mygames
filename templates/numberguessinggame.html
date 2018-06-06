@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
-<h1>Welcome To The Number Guessing Game</h1>
+<title>Number Guessing Game</title>
+<h1>Welcome To The Number Guessing Game!</h1>
 <h3 class="nggh3">Choose a number:</h3>
 <form method="POST">
 <input class="the_guess" type="number" name="guess">
@@ -14,11 +15,11 @@ Message:
 </br><br>
 <h4 class="guesses">
 You have guessed:<br><br>
-{%for guess in guesses%}
-{{ guess }}: {{ guesses[guess] }}
+{%for guess in ngg.guesses%}
+{{ guess }}: {{ ngg.guesses[guess] }}
 <br>
 {% endfor %}
-</h4>
 <br><br><br>
-<h5 class="Return">Return <a href="/home">home</a></h5>
+Return <a class="returnlink" href="/home">home</a>
+</h4>
 {% endblock %}

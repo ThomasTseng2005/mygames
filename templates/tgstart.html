@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Team Generator Start</title>
 </head>
 <body>
+<h1>
+    Welcome To The Team Generator!
+</h1>
+<h3 class="tgh3">Number of people:</h3>
+<h3 class="tgh3two">Number of groups:</h3>
 <form>
-    <input type="number" name="group_number" placeholder="Group Number">
+    <input type="number" name="people_number" placeholder="Type in a number between 2-10000" class="people_number">
+    <input type="number" name="group_number" placeholder="Type in a number between 2-1000" class="group_number">
 </form>
 </body>
 </html>
+{% endblock %}

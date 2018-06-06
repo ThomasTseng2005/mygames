@@ -1,15 +1,15 @@
 from flask import Flask, render_template, redirect, url_for, request
 from random import randint
 from models import User
+from models import NumberGuessingGame
 
 app = Flask(__name__)
 
 users = [User("admin", "admin")]
+ngg = NumberGuessingGame()
 current_user = users[0]
-guesses = {}
-final_number = 0
-numberguessinggamesame = False
 emessage = ""
+guesses = {}
 
 
 @app.route('/')
@@ -71,7 +71,7 @@ def home():
         if option_chosen == "Number Guessing Game":
             return redirect(url_for("numberguessinggame"))
         elif option_chosen == "Team Generator":
-            return redirect(url_for("teamgenerator"))
+            return redirect(url_for("tgstart"))
     return render_template("home.html", current_user=current_user, users=users, header=True)
 
 
@@ -83,51 +83,46 @@ def logout():
 
 
 @app.route('/numberguessinggame/new_game')
-def numberguessinggame(new_game=""):
-    the_number = randint(1, 100) * 1029384756
-    return redirect(url_for('numberguessinggame_continue', guesses=guesses, number=the_number))
+def numberguessinggame():
+    ngg.get_new_number()
+    ngg.guesses = {}
+    ngg.numberguessinggamesame = False
+    return redirect(url_for('numberguessinggame_continue', ngg=ngg))
 
 
-@app.route('/numberguessinggame/continue_game/<number>', methods=["POST", "GET"])
-def numberguessinggame_continue(number):
-    if numberguessinggamesame == True:
+@app.route('/numberguessinggame/continue_game', methods=["POST", "GET"])
+def numberguessinggame_continue():
+    if ngg.numberguessinggamesame == True:
         return redirect(url_for('home'))
     global current_user
     global guesses
-    global final_number
     message = ""
-    final_number = int(int(number) / 1029384756)
-    print(final_number)
     if request.method == "POST":
         # add guess to the guess list
         current_guess = request.form["guess"]
         if current_guess.isdigit() == True:
-            if int(current_guess) > final_number:
+            if int(current_guess) > ngg.number:
                 message = "Guess Is Too Big!"
-            elif int(current_guess) < final_number:
+            elif int(current_guess) < ngg.number:
                 message = "Guess Is Too Small!"
             else:
                 message = "You win!"
-                return redirect(url_for("numberguessinggame_finish", guesses=guesses, number=number, message=message))
-            guesses[str(current_guess)] = message
-    return render_template("numberguessinggame.html", message=message, guesses=guesses, final_number=final_number)
+                return redirect(url_for("numberguessinggame_finish", message=message))
+            ngg.guesses[str(current_guess)] = message
+    return render_template("numberguessinggame.html", message= message, ngg=ngg)
 
 
 @app.route('/numberguessinggame_finish')
 def numberguessinggame_finish():
+    if ngg.numberguessinggamesame == True:
+        return redirect(url_for('home'))
     global current_user
-    global guesses
-    global final_number
-    global numberguessinggamesame
-    final_number = final_number
-    count = len(guesses) + 1
-    guesses = {}
+    count = len(ngg.guesses) + 1
     points = 21 - count
     if points > 0:
         current_user.score += points
-    numberguessinggamesame = True
-    return render_template("nggfinish.html", count=count, guesses=guesses, final_number=final_number, points=points,
-                           numberguessinggamesame=numberguessinggamesame, current_user=current_user)
+    ngg.numberguessinggamesame = True
+    return render_template("nggfinish.html", count=count, current_user=current_user, ngg=ngg)
 
 
 @app.route('/tgstart', methods=["POST", "GET"])

@@ -1,15 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>You won The Number Guessing Game!</title>
 </head>
 <body>
 <h1>You Won!</h1>
-<h3>You now have {{ current_user.score }} points!</h3>
+<h3 class="""nggfinishthree">YOU NOW HAVE {{ current_user.score }} POINTS!</h3>
 <p>You got it in: {{ count }} guesses</p>
-<p>The number is: {{ final_number }}</p>
+<p>The number is: {{ ngg.number }}</p>
 <br><br><br>
 Return <a href="/home">home</a>
 </body>
 </html>
+{% endblock %}

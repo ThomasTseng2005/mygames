@@ -7,3 +7,18 @@ class User(object):
         self.guessing_number = 0
 
 
+class NumberGuessingGame():
+    def __init__(self):
+        self.number = 0
+        self.guesses = {}
+        self.numberguessinggamesame = False
+
+    def get_new_number(self):
+        self.number = randint(0,100)
+
+class TeamGenerator():
+    def __init__(self):
+        self.peoplenumber = 0
+        self.groupnumber = 0
+        self.everyone = {}
+
