@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<title>Four Digits</title>
+<h1>Welcome To The Four Digits Game!</h1>
+<h3 class="nggh3">Choose a four digit number:</h3>
+<form method="POST">
+<input class="the_guess" type="number" name="guess">
+<button type="submit" class="nggbutton">Guess</button>
+</form>
+<br>
+<h4 class="message">
+Message:
+{{ message }}
+</h4>
+</br><br>
+<h4 class="guesses">
+You have guessed:<br><br>
+{%for guess in guesses%}
+{{ guess }}: {{ guesses[guess] }}
+<br>
+{% endfor %}
+<br><br><br>
+Return <a class="returnlink" href="/home">home</a>
+</h4>
+{% endblock %}

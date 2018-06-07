@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Scoreboard</title>
+</head>
+<h1>Scoreboard</h1>
+<body>
+<div class="score">
+<h1 align="center" class="main">Main Scoreboard</h1>
+<br><br><br>
+{% for user in users %}
+{%if current_user == user %}
+<li style="list-style-type: cricle; color: #cb0011" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.score }} points</li>
+{% else %}
+<li style="list-style-type: cricle;" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.score }} points</li>
+{% endif %}
+{% endfor %}
+<h1 class="main">Number Guessing Game High Scores</h1>
+<br><br><br>
+{% for user in users %}
+{% if user.ngg < 100 %}
+{%if current_user == user %}
+<li style="list-style-type: cricle; color: #cb0011" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.ngg }} guesses</li>
+{% else %}
+<li style="list-style-type: cricle;" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.ngg }} guesses</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+<h1 class="main">Four Digits High Scores</h1>
+<br><br><br>
+{% for user in users %}
+{% if user.fd < 100 %}
+{%if current_user == user %}
+<li style="list-style-type: cricle; color: #cb0011" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.fd }} guesses</li>
+{% else %}
+<li style="list-style-type: cricle;" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.fd }} guesses</li>
+{% endif %}
+{% endif %}
+{% endfor %}
+<br><br><br>
+</div>
+</body>
+{% endblock %}

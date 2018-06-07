@@ -2,7 +2,7 @@
 {% block content %}
 <head>
     <meta charset="UTF-8">
-    <title>You won The Number Guessing Game!</title>
+    <title>You won The Four Digits!</title>
 </head>
 <body class="wonbackground">
 <h1 class="wonlabel">YOU WON!</h1>
@@ -10,6 +10,6 @@
 <h1 class="nggfinishone" align="center">{{ current_user.score }} POINTS!</h1>
 <br>
 <p class="nggwinp" align="center">You got it in: {{ count }} guesses</p>
-<p class="nggwinp" align="center">The number is: {{ ngg.number }}</p>
+<p class="nggwinp" align="center">The number is: {{ number }}</p>
 </body>
 {% endblock %}

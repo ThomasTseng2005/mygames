@@ -1,4 +1,4 @@
-h1{
+h1 {
     position: relative;
     text-align: center;
     color: rgba(0, 0, 0, 0.89);
@@ -7,8 +7,7 @@ h1{
     font-family: 'Cinzel', serif;
 }
 
-
-h2{
+h2 {
     font-family: 'Quicksand', sans-serif;;
     position: relative;
     left: 250px;
@@ -16,23 +15,23 @@ h2{
     color: #000000;
 }
 
-h3{
+h3 {
     position: relative;
     font-size: 30px;
     left: 42%;
-    top: 150px;
+    top: 125px;
 
 }
 
-.nggh3{
+.nggh3 {
     position: relative;
-    font-size:20px;
+    font-size: 20px;
     left: 15%;
     top: 200px;
     font-weight: lighter;
 }
 
-.the_guess{
+.the_guess {
     position: relative;
     font-size: 17px;
     left: 15%;
@@ -41,7 +40,7 @@ h3{
     font-family: Times;
 }
 
-.nggbutton{
+.nggbutton {
     position: relative;
     font-size: 17px;
     right: 218px;
@@ -50,32 +49,32 @@ h3{
     height: 30px;
 }
 
-.message{
+.message {
     position: relative;
-    font-size:20px;
+    font-size: 20px;
     left: 15%;
     top: 270px;
     font-weight: lighter;
     color: red;
 }
 
-.guesses{
+.guesses {
     position: relative;
-    font-size:20px;
+    font-size: 20px;
     left: 52%;
     top: 68px;
     font-family: Georgia;
     font-weight: lighter;
 }
 
-hr{
+hr {
     position: relative;
     font-size: 30px;
     left: 250px;
     top: 30px;
 }
 
-.logout{
+.scoreboard {
     position: absolute;
     left: 398px;
     top: 85px;
@@ -88,29 +87,48 @@ hr{
     font-weight: lighter;
 }
 
-.nggbutton{
+.logout {
+    position: absolute;
+    left: 520px;
+    top: 85px;
+    font-size: 18px;
+    color: rgb(76, 76, 76);
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: Cuprum, Arial;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+.dotthree {
+    position: absolute;
+    left: 517px;
+    top: 85px;
+    font-size: 30px;
+}
+
+.nggbutton {
     background-color: #0200d6;
     color: white;
 }
 
-.returnlink:visited{
+.returnlink:visited {
     color: #0200d6;
 }
 
-.returnlink:link{
+.returnlink:link {
     color: #0055ff;
 }
 
-.returnlink:hover{
+.returnlink:hover {
     color: darkblue;
 }
 
-.allguesses{
+.allguesses {
     font-weight: lighter;
 }
 
-
-.home{
+.home {
     position: absolute;
     left: 233px;
     top: 85px;
@@ -123,7 +141,7 @@ hr{
     font-weight: lighter;
 }
 
-.profile{
+.profile {
     position: absolute;
     left: 315px;
     top: 85px;
@@ -136,95 +154,168 @@ hr{
     font-weight: lighter;
 }
 
-body{
+body {
     background-color: #F7F7F7;
 }
 
-header{
-  width: 100%;
-  height: 140px;
-  background-color: white;
+header {
+    width: 100%;
+    height: 140px;
+    background-color: white;
 }
 
-.dotone{
+.dotone {
     position: absolute;
     left: 310px;
     top: 85px;
     font-size: 30px;
 }
 
-.dottwo{
+.dottwo {
     position: absolute;
-    left: 392px;
+    left: 395px;
     top: 85px;
     font-size: 30px;
 }
 
-.underline{
-  position: absolute;
-  top: 57.5%;
-  left: 32%;
+.underline {
+    position: absolute;
+    top: 57.5%;
+    left: 32%;
 }
 
-.choices{
-  color: black;
-  position: absolute;
-  background-color: transparent;
-  top: 54%;
-  left: 32%;
-  width: 500px;
-  height: 40px;
-  font-size: 23px;
-  border: transparent;
+.choices {
+    color: black;
+    position: absolute;
+    background-color: transparent;
+    top: 54%;
+    left: 32%;
+    width: 500px;
+    height: 40px;
+    font-size: 23px;
+    border: transparent;
 }
 
-.button{
-  position: absolute;
-  top: 67%;
-  left: 44%;
-  width: 150px;
-  height: 35px;
-  font-size: 20px;
-  background-color: #1220cb;
-  border: transparent;
-  text-decoration: none;
-  color: white;
+.button {
+    position: absolute;
+    top: 67%;
+    left: 44%;
+    width: 150px;
+    height: 35px;
+    font-size: 20px;
+    background-color: #1220cb;
+    border: transparent;
+    text-decoration: none;
+    color: white;
 }
 
-.tgh3{
+.tgh3 {
     position: relative;
-    font-size:20px;
+    font-size: 20px;
     top: 200px;
     left: 320px;
     font-weight: lighter;
 }
 
-.tgh3two{
+.tgh3two {
     position: relative;
-    font-size:20px;
-    top: 300px;
+    font-size: 20px;
+    top: 290px;
     left: 320px;
     font-weight: lighter;
 }
 
-.people_number{
+.people_number {
     position: relative;
-    font-size:15px;
+    font-size: 15px;
     width: 300px;
     font-weight: lighter;
     top: 154px;
-    left:480px;
+    left: 480px;
 }
 
-.group_number{
+.group_number {
     position: relative;
-    font-size:15px;
+    font-size: 15px;
     width: 300px;
     font-weight: lighter;
-    top: 278px;
-    left:170px;
+    top: 268px;
+    left: 170px;
 }
 
+.nggfinishthree {
+    position: relative;
+    left: 18px;
+    font-size: 40px;
+}
+
+.wonbackground {
+    background-color: #fff71b;
+}
+
+.wonlabel {
+    color: white;
+    font-family: Impact;
+    font-size: 150px;
+}
+
+.nggwinp {
+    position: relative;
+    color: white;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    font-size: 25px;
+    bottom: 150px;
+}
+
+.nggfinishone {
+    font-size: 100px;
+    position: relative;
+    top: 150px;
+}
+
+.tgmessage {
+    position: relative;
+    font-size: 20px;
+    left: 320px;
+    top: 290px;
+    font-weight: lighter;
+    color: red;
+}
+
+.tgform {
+    position: relative;
+    font-size: 20px;
+    left: -160px;
+    top: 100px;
+    font-weight: lighter;
+}
+
+.tgcontinuebutton {
+    position: relative;
+    font-size: 20px;
+    left: 1140px;
+    top: 7px;
+    width: 130px;
+    height: 35px;
+    background-color: #0200d6;
+    color: white;
+}
+
+.mainscoreboard {
+    font-family: "American Typewriter";
+}
+
+.main {
+    font-weight: lighter;
+    top: 100px;
+
+}
+
+.score{
+    position: relative;
+    font-size: 40px;
+    top: 10px;
+}
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -236,10 +327,10 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav{
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    vertical-align:baseline;
+footer, header, hgroup, menu, nav {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
 }

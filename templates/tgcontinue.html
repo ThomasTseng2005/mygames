@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Team Generator</title>
+</head>
+<body>
+<h1>
+    Welcome To The Team Generator!
+</h1>
+<h3 class="tgh3">Type in everyone's name:</h3>
+<form method="POST" class="tgform">
+    {% for i in range(tgpeoplenum) %}
+    <input type="text" name="peoplenumber" placeholder="Type in a name" class="people_number">
+    <br>
+    {% endfor %}
+    <button type="submit" class="tgcontinuebutton">Finish</button>
+</form>
+<h4 class="message">
+{{ message }}
+</h4>
+</body>
+{% endblock %}

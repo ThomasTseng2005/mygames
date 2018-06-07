@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Team Generator</title>
+</head>
+<body>
+{% for i in range(1, team_number+1)%}
+    <br>
+    <br>
+    TEAM {{ i }}:
+    {% for p in people %}
+        {% if teams[p] == i %}
+            {% if p not in the_list %}
+            {{ " , " + p}}
+            {% else %}
+            {{ p }}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+<br>
+<form method="POST">
+<button type="submit" name="tggfinishbutton">Repick</button>
+</form>
+</body>
+{% endblock %}
