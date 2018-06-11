@@ -1,23 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" type="text/css" href="login.css">
+{% extends "layout.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
-<h1>Login</h1>
-<form method="POST">
-    <input type="text" name="username" placeholder="Email:">
+<body class="loginbackground">
+<h1 align="center" class="loginh1">Login</h1>
+<form method="POST" align="center">
+    <input type="text" name="username" placeholder="Username:" class="logininput">
     <br>
-    <input type="password" name="password" placeholder="Password:">
+    <input type="password" name="password" placeholder="Password:" class="logininput">
     <br>
-    <button type="submit">Submit</button>
+    <button type="submit" class="loginbutton">Submit</button>
 </form>
 {% if error_message %}
-{{ error_message }}
+<p class="loginmessage">{{ error_message }}</p>
 {% endif %}
 <br>
-Dont have an account? <a href="/create">Create Now</a>
+<p align="center" class="loginp">Don't have an account? <a href="/create" class="logina">Create Now</a></p>
 </body>
-</html>
+{% endblock %}

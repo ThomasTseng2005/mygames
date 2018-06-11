@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery Results!</title>
+</head>
+{% if number > 0 %}
+<body class="wonbackground">
+<h1 class="wonlabel">YOU WON!</h1>
+<p class="lotterywinp" align="center">{{ number }} points earned</p>
+<h3 class="nggfinishthree" align="center">YOU NOW HAVE</h3>
+<h1 class="nggfinishone" align="center">{{ current_user.score }} POINTS!</h1>
+</body>
+{% elif number == 0 %}
+<body class="tiebackground">
+<h1 class="wonlabel">It was a tie!</h1>
+<p class="lotterywinp" align="center">No Points Earned or Lost!</p>
+<h3 class="nggfinishthree" align="center">YOU NOW HAVE</h3>
+<h1 class="nggfinishone" align="center">{{ current_user.score*1 }} POINTS!</h1>
+</body>
+{% else %}
+<body class="lostbackground">
+<h1 class="wonlabel">YOU LOST!</h1>
+<p class="lotterywinp" align="center">{{ number*-1 }} points lost</p>
+<h3 class="nggfinishthree" align="center">YOU NOW HAVE</h3>
+<h1 class="nggfinishone" align="center">{{ current_user.score }} POINTS!</h1>
+</body>
+<br>
+{% endif %}
+{% endblock %}

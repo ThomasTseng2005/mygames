@@ -4,22 +4,23 @@ from models import User
 from models import NumberGuessingGame
 from models import TeamGenerator
 from models import FourDigits
+from models import Lottery
 import random
 
 app = Flask(__name__)
 
-users = [User("admin", "admin")]
+users = [User("Admin", "admin")]
 ngg = NumberGuessingGame()
 tg = TeamGenerator()
 current_user = users[0]
 emessage = ""
 fd = FourDigits()
+lottery = Lottery()
 
 
 @app.route('/')
 def hello_world():
     return redirect(url_for('login'))
-
 
 @app.route('/login', methods=["POST", "GET"])
 def login():
@@ -27,6 +28,7 @@ def login():
     error_message = None
     if request.method == "POST":
         username = request.form["username"]
+        username = username.title()
         for user in users:
             if user.name == username:
                 if user.password == request.form["password"]:
@@ -39,7 +41,6 @@ def login():
                 error_message = "No user by that name!"
         for i in users:
             print(i)
-
     return render_template("login.html", user=current_user, error_message=error_message)
 
 
@@ -69,6 +70,7 @@ def home():
     global current_user
     global numberguessinggamesame
     numberguessinggamesame = False
+    lottery.same = False
     if request.method == "POST":
         option_chosen = request.form["option"]
         print("They chose: ", option_chosen)
@@ -78,6 +80,10 @@ def home():
             return redirect(url_for("tgstart"))
         elif option_chosen == "Four Digits":
             return redirect(url_for("fdstart"))
+        elif option_chosen == "Lottery":
+            return redirect(url_for("lotterystart"))
+        elif option_chosen == "Two Player Tic-Tac-Toe":
+            return redirect(url_for("tictactoe"))
     return render_template("home.html", current_user=current_user, users=users, header=True)
 
 
@@ -125,7 +131,7 @@ def numberguessinggame_finish():
         return redirect(url_for('home'))
         """
     global current_user
-    if ngg.numberguessinggamesame == True:
+    if ngg.numberguessinggamesame == True or len(ngg.guesses) == 0:
         return redirect(url_for('home'))
     global current_user
     count = len(ngg.guesses) + 1
@@ -142,6 +148,8 @@ def numberguessinggame_finish():
 def tgstart():
     if tg.repick == True:
         return redirect(url_for("tgcontinue"))
+    else:
+        tg.same = False
     tg.reset()
     if request.method == "POST":
         tg.peoplenumber = request.form["people_number"]
@@ -181,7 +189,10 @@ def tgcontinue():
             else:
                 count += 1
         return redirect(url_for("tgfinish"))
+    elif tg.same == True:
+        return redirect(url_for("tgstart"))
     if request.method == "POST":
+        tg.people = []
         people = request.form.getlist("peoplenumber")
         for i in people:
             tg.people.append(i.title())
@@ -189,15 +200,17 @@ def tgcontinue():
             if tg.people.count(p) > 1 or p == "":
                 tg.messagetwo = "Please do not leave any text box blank and no duplicates"
             else:
-                count = 1
-                random.shuffle(tg.people)
-                for person in tg.people:
-                    tg.everyone[person] = count
-                    if count == tg.groupnumber:
-                        count = 1
-                    else:
-                        count += 1
-                return redirect(url_for("tgfinish"))
+                tg.messagetwo = ""
+        if tg.messagetwo == "":
+            count = 1
+            random.shuffle(tg.people)
+            for person in tg.people:
+                tg.everyone[person] = count
+                if count == tg.groupnumber:
+                    count = 1
+                else:
+                    count += 1
+            return redirect(url_for("tgfinish"))
     return render_template("tgcontinue.html", tgpeoplenum=tg.peoplenumber, everyone=tg.everyone, message=tg.messagetwo)
 
 
@@ -210,7 +223,12 @@ def tgfinish():
     if request.method == "POST":
         tg.repick = True
         tg.first = []
+        tg.same = False
         return redirect(url_for("tgstart"))
+    elif tg.same == True:
+        return redirect(url_for("tgstart"))
+    else:
+        tg.same = True
     return render_template("tgfinish.html", header=True, team_number=tg.groupnumber, teams=tg.everyone,
                            people=tg.people, the_list=tg.first, groupnumber=tg.groupnumber)
 
@@ -231,6 +249,7 @@ def fdstart():
     fd.same = False
     print(fd.num)
     return redirect(url_for("fdcontinue"))
+
 
 @app.route('/fdcontinue', methods=["POST", "GET"])
 def fdcontinue():
@@ -259,14 +278,14 @@ def fdcontinue():
                 message = str(fd.a) + "a and " + str(fd.b) + "b!"
                 fd.guesses[str(current_guess)] = message
                 if fd.a == 4:
-                    return redirect(url_for("fdfinish", message=message, guesses=fd.guesses, number= fd.num))
-    return render_template("fdcontinue.html", message=message, guesses=fd.guesses, number= fd.num)
+                    return redirect(url_for("fdfinish", message=message, guesses=fd.guesses, number=fd.num))
+    return render_template("fdcontinue.html", message=message, guesses=fd.guesses, number=fd.num)
 
 
 @app.route('/fdfinish', methods=["POST", "GET"])
 def fdfinish():
     global current_user
-    if fd.same == True:
+    if fd.same == True or len(fd.guesses) == 0:
         return redirect(url_for('home'))
     count = len(fd.guesses)
     if count < current_user.fd:
@@ -275,8 +294,46 @@ def fdfinish():
     if points > 0:
         current_user.score += points
     fd.same = True
-    return render_template("fdfinish.html", count=count, current_user=current_user, header=True, number= fd.num)
+    return render_template("fdfinish.html", count=count, current_user=current_user, header=True, number=fd.num)
 
+
+@app.route('/lotterystart', methods=["POST", "GET"])
+def lotterystart():
+    global current_user
+    message = ""
+    if request.method == "POST":
+        lottery.range = request.form["range"]
+        if lottery.range.isdigit() == False:
+            message = "Please type in an integer from 1-1000"
+        else:
+            lottery.range = int(lottery.range)
+            if lottery.range < 1:
+                message = "Please type in an integer from 1-1000"
+            else:
+                if lottery.range > current_user.score + 1000:
+                    message = "Sorry, you need " + str(
+                        lottery.range - current_user.score - 1000) + " more points to play within this range!"
+                else:
+                    lottery.number = randint(-int(lottery.range), int(lottery.range))
+                    return redirect(url_for("lotteryfinish"))
+    return render_template("lotterystart.html", message=message, current_user=current_user)
+
+
+@app.route('/lotteryfinish', methods=["POST", "GET"])
+def lotteryfinish():
+    global current_user
+    if lottery.same == True:
+        return redirect(url_for('home'))
+    current_user.score += lottery.number
+    current_user.lottery += lottery.number
+    current_user.lotterytrue = True
+    lottery.same = True
+    return render_template("lotteryfinish.html", urrent_user=current_user, header=True, number=lottery.number,
+                           current_user=current_user)
+
+@app.route('/tictactoe', methods=["POST", "GET"])
+def tictactoe():
+    return render_template("tictactoe.html")
 
 @app.route('/profile', methods=["POST", "GET"])
 def profile():

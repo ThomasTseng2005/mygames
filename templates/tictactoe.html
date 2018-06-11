@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Two PLayer Tic-Tac-Toe</title>
+</head>
+<link href="{{ url_for('static', filename="style.css") }}" rel="stylesheet">
+<h1 class="tictactoeh1">Welcome To The Two Player Tic-Tac-Toe Game!</h1>
+<body>
+<img class="tictactoeboard" src="{{url_for('static', filename="tictactoe.png")}}" alt="Tic-Tac-Toe Board">
+</body>
+{% endblock %}

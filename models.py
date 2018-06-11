@@ -7,6 +7,8 @@ class User(object):
         self.guessing_number = 0
         self.ngg = 100
         self.fd = 100
+        self.lottery = 0
+        self.lotterytrue = False
 
 
 class NumberGuessingGame():
@@ -48,6 +50,12 @@ class FourDigits():
         self.repeattwo = False
         self.a = 0
         self.b = 0
+
+class Lottery():
+    def __init__(self):
+        self.number = 0
+        self.range = 0
+        self.same = False
 
 
 

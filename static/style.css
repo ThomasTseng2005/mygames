@@ -40,6 +40,28 @@ h3 {
     font-family: Times;
 }
 
+.lotteryrange{
+    position: relative;
+    font-size: 20px;
+    top: 175px;
+    left: 480px;
+    font-weight: lighter;
+    width: 425px;
+    font-family: Times;
+}
+
+.lotterybutton{
+    position: relative;
+    font-size: 20px;
+    top: 175px;
+    left: 490px;
+    font-weight: lighter;
+    width: 150px;
+    background-color: #0200d6;
+    color: white;
+    font-weight: bold;
+}
+
 .nggbutton {
     position: relative;
     font-size: 17px;
@@ -228,9 +250,9 @@ header {
 .people_number {
     position: relative;
     font-size: 15px;
-    width: 300px;
+    width: 800px;
     font-weight: lighter;
-    top: 154px;
+    top: 95px;
     left: 480px;
 }
 
@@ -239,7 +261,7 @@ header {
     font-size: 15px;
     width: 300px;
     font-weight: lighter;
-    top: 268px;
+    top: 260px;
     left: 170px;
 }
 
@@ -293,8 +315,8 @@ header {
 .tgcontinuebutton {
     position: relative;
     font-size: 20px;
-    left: 1140px;
-    top: 7px;
+    left: 480px;
+    top: 130px;
     width: 130px;
     height: 35px;
     background-color: #0200d6;
@@ -316,6 +338,193 @@ header {
     font-size: 40px;
     top: 10px;
 }
+
+.lostbackground{
+    background-color: #ff0001;
+}
+
+.lotterymessage{
+    position: relative;
+    font-size: 20px;
+    left: 320px;
+    top: 270px;
+    font-weight: lighter;
+    color: red;
+}
+
+.lotterymessage a:visited{
+    color: #0200d6;
+}
+
+.lotterymessage a:link {
+    color: #0055ff;
+}
+
+.lotterymessage a:hover {
+    color: darkblue;
+}
+
+.lotterywinp{
+    position: relative;
+    color: white;
+    font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+    font-size: 25px;
+    top: 55px;
+}
+
+.tiebackground{
+    background-color: darkslategrey;
+}
+
+.tgbutton{
+    position: relative;
+    font-size: 20px;
+    width: 130px;
+    height: 40px;
+    background-color: #0200d6;
+    color: white;
+}
+
+.tgdiv{
+    position: relative;
+    font-size: 20px;
+    top: 40px;
+    left: 250px;
+    width: 1000px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.tgstartbutton{
+    position: relative;
+    top: 190px;
+    left: 280px;
+    font-size: 20px;
+    width: 130px;
+    height: 40px;
+    background-color: #0200d6;
+    color: white;
+}
+
+.tgform a{
+    position: relative;
+    top: 70px;
+    left: 478px;
+}
+.tgform a:visited{
+    color: #0200d6;
+}
+
+.tgform a:link {
+    color: #0055ff;
+}
+
+.tgform a:hover {
+    color: darkblue;
+}
+
+.people_num{
+    position: relative;
+    font-size: 15px;
+    width: 300px;
+    font-weight: lighter;
+    top: 145px;
+    left: 480px;
+}
+
+.tgh32{
+    position: relative;
+    font-size: 20px;
+    top: 150px;
+    left: 320px;
+    font-weight: lighter;
+}
+
+.tgmessage {
+    position: relative;
+    font-size: 20px;
+    left: 320px;
+    top: 280px;
+    font-weight: lighter;
+    color: red;
+}
+
+.logininput{
+    position: relative;
+    width: 500px;
+    height: 25px;
+    font-size: 20px;
+    top: 250px;
+    font-family: 'Cinzel', serif;
+}
+
+.loginbutton{
+    position: relative;
+    font-size: 20px;
+    top:320px;
+    width: 100px;
+    color: white;
+    height: 35px;
+    background-color: #0200d6;
+    border: none;
+}
+
+.loginp{
+    position: relative;
+    font-size: 20px;
+    top: 350px;
+    font-family: "American Typewriter";
+}
+
+.loginh1{
+    position: relative;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.89);
+    top: 150px;
+    font-size: 50px;
+    font-family: 'Cinzel', serif;
+}
+
+.loginbackground{
+    background: linear-gradient(to right, #ffffff, #0066ff);
+}
+
+.loginmessage{
+    color: #cb0011;
+    position: relative;
+    font-size: 20px;
+    top: 230px;
+    left: 470px;
+    font-family: Georgia;
+}
+
+.logina{
+}
+.logina:visited{
+    color: #0200d6;
+}
+
+.logina:link {
+    color: #0055ff;
+}
+
+.logina:hover {
+    color: darkblue;
+}
+
+.tictactoeh1 {
+    position: relative;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.89);
+    top: 40px;
+    font-size: 40px;
+    font-family: 'Cinzel', serif;
+}
+
+.tictactoeboard{
+    top: 250px;
+    left: 400px;
+}
+
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

@@ -1,25 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
+{% block content %}
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
 </head>
-<body>
-<h1>Signup</h1>
-<form method ="POST">
-    <input type="text" name="usersignup" placeholder="Username:">
+<body class="loginbackground">
+<h1 class="loginh1">Signup</h1>
+<form method ="POST" align="center">
+    <input type="text" name="usersignup" placeholder="Username:" class="logininput">
     <br>
-    <input type="password" name="passwordsignup" placeholder="Password:">
+    <input type="password" name="passwordsignup" placeholder="Password:" class="logininput">
     <br>
-    <input type="password" name="retype_password" placeholder="Retype Password:">
+    <input type="password" name="retype_password" placeholder="Retype Password:" class="logininput">
     <br>
-    <button type="submit">Signup</button>
-
+    <button type="submit" class="loginbutton">Signup</button>
 </form>
 {% if error_message %}
-{{ error_message }}
+<p class="loginmessage">{{ error_message }}</p>
 {% endif %}
 <br>
-Already have an account? <a href="/login">Login</a>
+<p align="center" class="loginp">Already have an account? <a href="/login" class="logina">Login Now</a></p>
 </body>
-</html>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Lottery</title>
+</head>
+<h1>Welcome To The Lottery!</h1>
+<body>
+<br><br><br><br>
+<h3 class="tgh3">Choose the range:</h3>
+<form method="POST">
+<input class="lotteryrange" type="number" name="range" placeholder="Maximum: {{ current_user.score + 1000 }}">
+<button type="submit" class="lotterybutton">Play</button>
+</form>
+<p class="lotterymessage">{{ message }} <a href="/home">Return home</a></p>
+</body>
+{% endblock %}

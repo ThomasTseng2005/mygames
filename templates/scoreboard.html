@@ -38,6 +38,25 @@
 {% endif %}
 {% endif %}
 {% endfor %}
+<h1 class="main">Lottery Scores</h1>
+<br><br><br>
+{% for user in users %}
+{% if user.lotterytrue == True %}
+{%if current_user == user %}
+{%if user.lottery >= 0 %}
+<li style="list-style-type: cricle; color: #cb0011" align= "center" class="mainscoreboard">{{ user.name }}: +{{ user.lottery }} points</li>
+{% else %}
+<li style="list-style-type: cricle; color: #cb0011" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.lottery }} points</li>
+{% endif %}
+{% else %}
+{%if user.lottery >= 0 %}
+<li style="list-style-type: cricle;" align= "center" class="mainscoreboard">{{ user.name }}: +{{ user.lottery }} points</li>
+{% else %}
+<li style="list-style-type: cricle;" align= "center" class="mainscoreboard">{{ user.name }}: {{ user.lottery }} points</li>
+{% endif %}
+{% endif %}
+{% endif %}
+{% endfor %}
 <br><br><br>
 </div>
 </body>
